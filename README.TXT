@@ -1,0 +1,26 @@
+# DNA Analyzer
+This is a Java program that analyzes a given DNA string and provides various information about the DNA such as finding genes, calculating CG ratio, and counting specific codons.
+
+## Features
+- Find stop codons in a DNA string
+- Find genes in a DNA string
+- Retrieve all genes from a DNA string
+- Calculate the CG ratio of a DNA string
+- Count the number of "CTG" codons in a DNA string
+- Process genes in a DNA string and display specific information
+## How to Use
+1. Import the FindGenes class into your project.
+2. Instantiate a FindGenes object and call the methods as required.
+## Methods
+- findStopCodon(String dna, int startIndex, String stopCodon) - Finds the index of the first occurrence of a stop codon in a DNA string, starting from a given index.
+- testFindStopCodon() - Tests the findStopCodon method with sample inputs.
+- findGene(String dna) - Finds the first gene in a DNA string.
+- testFindGene() - Tests the findGene method with a sample input.
+- getAllGenes(String dna) - Retrieves all the genes from a DNA string.
+- testGetAllGenes() - Tests the getAllGenes method with a sample input.
+- cgRatio(String dna) - Calculates the CG ratio of a DNA string.
+- countCTG(String dna) - Counts the number of "CTG" codons in a DNA string.
+- processGenes(StorageResource sr) - Processes a collection of genes and displays specific information.
+- testProcessGenes() - Tests the processGenes method with a sample input.
+## Dependencies
+This program requires the edu.duke library to run. Make sure to import it into your project.
