@@ -1,10 +1,3 @@
-
-/**
- * Write a description of Part1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 import edu.duke.*;
 
 public class FindGenes {
@@ -21,30 +14,16 @@ public class FindGenes {
         return dna.length();
     }  
     
-    public void testFindStopCodon () {
-        int l1 = findStopCodon("ATGXXXYYYTAGZZZ", 0, "TAG");
-        int l2 = findStopCodon("QQATGXXXYYYTAGZZZ", 2, "TAG");
-        int l3 = findStopCodon("QQATGXXTAGZZZ", 2, "TAG");
-        System.out.println("Find stop codon: " + l1);
-        System.out.println("Find stop codon: " + l2);
-        System.out.println("Find stop codon: " + l3);
-    }
-    
     public String findGene(String dna) {
         String dnaUpper = dna.toUpperCase();
         int startIndex = dnaUpper.indexOf("ATG");
-        //System.out.println("Find ATG: " + startIndex);
         if (startIndex == -1) {
             return "";
         }
         int taaIndex = findStopCodon(dnaUpper, startIndex, "TAA");
-        //System.out.println("Find TAA: " + taaIndex);
         int tagIndex = findStopCodon(dnaUpper, startIndex, "TAG");
-        //System.out.println("Find TAG: " + tagIndex);
         int tgaIndex = findStopCodon(dnaUpper, startIndex, "TGA");
-        //System.out.println("Find TGA: " + tgaIndex);
         int indexStopCodon = Math.min(taaIndex, Math.min(tagIndex, tgaIndex));
-        //System.out.println("indexStopCodon: " + indexStopCodon);
         if (indexStopCodon == dnaUpper.length()) {
             return "";
         } else {
@@ -61,22 +40,17 @@ public class FindGenes {
         StorageResource store = new StorageResource();
         String dnaUpper = dna.toUpperCase();
         int startIndex = dnaUpper.indexOf("ATG");
-        //System.out.println("Find ATG: " + startIndex);
-        //System.out.println("dnaUpper: " + dnaUpper);
         while (startIndex != -1) {
             String gene = findGene(dna);
             if (gene.length() > 0) {
-                //System.out.println("Find gene: " + gene);
                 store.add(gene);
                 dna = dna.substring(startIndex + gene.length());
                 dnaUpper = dna.toUpperCase();
-                //System.out.println("dnaUpper: " + dnaUpper);
             } else {
                 dna = dna.substring(startIndex + 3);
                 dnaUpper = dna.toUpperCase();
             }
             startIndex = dnaUpper.indexOf("ATG");
-            //System.out.println("Find ATG: " + startIndex);
         }
         return store;
     }
@@ -110,7 +84,6 @@ public class FindGenes {
             startG = pos + 1;
         }
         int num = countC + countG;
-        //System.out.println("The number of C and G: " + num);
         return ((double)num)/dna.length();
     }
     
@@ -144,7 +117,6 @@ public class FindGenes {
         int num2 = 0;
         for (String s : sr.data()) {
             double r = cgRatio(s);
-            //System.out.println("The cgRatio: " + r);
             if (r > 0.35) {
                 System.out.println(s);
                 num2++;
