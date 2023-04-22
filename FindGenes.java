@@ -130,7 +130,7 @@ public class FindGenes {
                 length = s.length();
             }
         }
-        System.out.println(length);
+        System.out.println("The longest gene: " + length);
     }
     public void testProcessGenes() {
         FileResource fr = new FileResource("GRch38dnapart.fa");
