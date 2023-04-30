@@ -1,5 +1,9 @@
 # DNA Analyzer
 This is a Java program that analyzes a given DNA string and provides various information about the DNA such as finding genes, calculating CG ratio, and counting specific codons.
+This is a Coursera course assignment.
+Course:
+Java Programming: Solving Problems with Software
+https://www.coursera.org/learn/java-programming?specialization=object-oriented-programming
 
 ## Features
 - Find stop codons in a DNA string
